@@ -26,9 +26,3 @@ class User(UserMixin, db.Model):
     token_expiration = db.Column(db.DateTime)
     two_factor_enabled = db.Column(db.Boolean, default=False, nullable=False)
     is_active = db.Column(db.Boolean, default=False, nullable=False)
-
-    def is_authenticated():
-	return True
-
-    def is_two_factor_enabled(self):
-	return self.two_factor_enabled
