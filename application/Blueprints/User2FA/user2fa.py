@@ -24,7 +24,7 @@ def enable_2fa_post():
     user.two_factor_enabled = True
     db.session.commit()
     print('Worked!!!')
-    return redirect(url_for('user_profile.show_user_profile'))
+    return redirect(url_for('user_profile.show_user_profile_1'))
 
 @user2fa.route('/login_verify_2fa')
 def login_verify_2fa():
@@ -46,7 +46,7 @@ def login_verify_2fa_post():
     if login_code != code:
         return redirect(url_for('user2fa.login_verify_2fa'))
     else: 
-        return redirect(url_for('user_profile.show_user_profile'))
+        return redirect(url_for('user_profile.show_user_profile_1'))
 
 @user2fa.route('/disable_2fa')
 def disable_2fa():
