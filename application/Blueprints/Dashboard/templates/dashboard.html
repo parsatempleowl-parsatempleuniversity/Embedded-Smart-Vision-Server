@@ -6,6 +6,7 @@
 
 {% block content %}
   <ul>
+    <img src="{{ url_for('dashboard.static', filename='CameraOffline.jpg')">
   {% for node in nodes %}
     <figure>
       <a href="{{ url_for('dashboard.show_live_video', node=node) }}">
